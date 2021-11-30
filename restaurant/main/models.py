@@ -4,7 +4,7 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="img/") #gotta install pillow, pip install pillow
+    image = models.ImageField(upload_to="cat_imgs/") #gotta install pillow, pip install pillow
 
     def __str__(self):
         return self.name
@@ -20,7 +20,7 @@ class Ingredient(models.Model):
 
 class Dish(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="img/") #gotta install pillow, pip install pillow
+    image = models.ImageField(upload_to="dish_img/") #gotta install pillow, pip install pillow
     price = models.FloatField()
     description = models.CharField(max_length=200, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)

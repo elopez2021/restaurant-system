@@ -5,7 +5,7 @@ from .models import *
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'image')
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, )
 '''
 class DishAdmin(admin.ModelAdmin):
     list_display = ('id','name','image', 'status')
