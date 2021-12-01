@@ -8,6 +8,7 @@ urlpatterns=[
     path('', views.home, name='home'),
     path('category-list', views.category_list, name='category-list'),
     path('dishes-list', views.dishes_list, name='dishes-list'),
+    path('category-dish-list/<int:cat_id>/', views.category_dish_list, name='category-dish-list'),
 ]
 #this is important for static files
 if settings.DEBUG:

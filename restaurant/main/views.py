@@ -17,4 +17,14 @@ def dishes_list(request):
     cats=Dish.objects.distinct().values('category__name', 'category__id') #because the category name is a foreign key we add __ to fetch the field
     ingres=Dish.objects.distinct().values('ingredient__name', 'ingredient__id')
     context = {'dishes':dishes, 'cats':cats, 'ingres':ingres}
+
     return render(request, 'main/dishes-list.html', context)
+
+# Dishes List According to Category
+def category_dish_list(request, cat_id):
+    category=Category.objects.get(id=cat_id) #this has to be an instance of Category 
+    dishes=Dish.objects.filter(category=category).order_by('-id') #and here we pass the category instance
+    cats=Dish.objects.distinct().values('category__name', 'category__id')
+    ingres=Dish.objects.distinct().values('ingredient__name', 'ingredient__id')
+    context = {'dishes':dishes, 'cats':cats, 'ingres':ingres}
+    return render(request, 'main/category_dish_list.html', context)

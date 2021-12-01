@@ -8,7 +8,7 @@
         {% for cat in category %}
 			<div class="col-md-3 mb-4">
 				<div class="card shadow">
-				<a href=""><img src="/media/{{cat.image}}" class="card-img-top" alt="{{cat.name}}" /></a>
+				<a href="{% url 'category-dish-list' cat.id %}"><img src="/media/{{cat.image}}" class="card-img-top" alt="{{cat.name}}" /></a>
 				<div class="card-body">
 					<h6 class="card-text"><a href="#">{{cat.name}}</a></h6>
 				</div>
