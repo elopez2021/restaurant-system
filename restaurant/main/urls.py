@@ -7,6 +7,7 @@ from django.conf.urls.static import static #you need to import this if you  wann
 urlpatterns=[
     path('', views.home, name='home'),
     path('category-list', views.category_list, name='category-list'),
+    path('dishes-list', views.dishes_list, name='dishes-list'),
 ]
 #this is important for static files
 if settings.DEBUG:

@@ -33,12 +33,13 @@
 	<!-- Featured Dishes -->
 	<h3 class="my-4 border-bottom pb-1">Comidas Destacadss</h3>
 	<div class="row">
- 
+    {% for dish in data %}
 		<div class="col-md-3 mb-4">
 			<div class="card shadow">
-			  <a href="" class="card-img-top" alt=""><img src="{% static '/media/img/1.png' %}" alt=""></a>
+			  <a href="" class="card-img-top" alt=""><img src="/media/{{dish.image}}" alt=""></a>
 			  <div class="card-body">
-			    <h6 class="card-text"><a href="">Hamburguesa</a></h6>
+			    <h5 class="card-text"><a href="/dish/{{dish.slug}}/{{dish.id}}">{{dish.name}}</a></h5>
+          <h6>$ <span class="">{{dish.price}}</span></h6>
 			  </div>
 			  <div class="card-footer">
 			  	<button class="btn btn-sm btn-primary add-to-cart" data-index=""><i class="fa fa-shopping-cart"></i></button>
@@ -52,7 +53,8 @@
 			  </div>
 			</div>
 		</div>
+    {% endfor %}
 	</div>
-	<p class="my-4 text-center"><a href="" class="btn btn-dark btn-sm">Mostrar Todo <i class="fa fa-long-arrow-alt-right"></i></a></p>
+	<p class="my-4 text-center"><a href="{% url 'dishes-list' %}" class="btn btn-dark btn-sm">Mostrar Todo <i class="fa fa-long-arrow-alt-right"></i></a></p>
 </main>
 {% endblock %}

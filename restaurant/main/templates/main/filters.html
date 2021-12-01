@@ -1,0 +1,26 @@
+{% load static %}
+<!--Category Filer-->
+<div class="card mb-4">
+    <h6 class="card-header">Categorias</h6>
+    <div class="list-group list-group-flush">
+        {% for cat in cats %}
+        <li class="list-group-item">
+            <input class="filter-checkbox" data-filter="category" value="{{cat.category__id}}" type="checkbox" />&nbsp;
+            {{cat.category__name}}
+        </li>
+        {% endfor %}
+    </div>
+</div>
+
+<!--Ingredient Filer-->
+<div class="card mb-4">
+    <h6 class="card-header">Ingredientes</h6>
+    <div class="list-group list-group-flush">
+        {% for ingre in ingres %}
+        <li class="list-group-item">
+            <input class="filter-checkbox" data-filter="ingredient" value="{{ingre.ingredient__id}}" type="checkbox" />&nbsp;
+            {{ingre.ingredient__name}}
+        </li>
+        {% endfor %}
+    </div>
+</div>
