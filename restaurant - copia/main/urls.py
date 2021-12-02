@@ -9,9 +9,6 @@ urlpatterns=[
     path('category-list', views.category_list, name='category-list'),
     path('dishes-list', views.dishes_list, name='dishes-list'),
     path('category-dish-list/<int:cat_id>/', views.category_dish_list, name='category-dish-list'),
-    path('register/', views.registerPage, name='register'),
-    path('login/', views.loginPage, name='login'),
-    path('dish/<str:slug>/<int:id>', views.dish_detail, name='dish-detail,')
 ]
 #this is important for static files
 if settings.DEBUG:

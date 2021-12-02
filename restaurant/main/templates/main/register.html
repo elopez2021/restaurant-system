@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<!--
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Registrar">
+</form>
+-->
+<div class="container">
+    <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <div id="ui">
+    <h1 class="text-center">FORMULARIO REGISTRO</h1>
+    
+     <form class="form-group text-center" method="post">
+        {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-6">
+        <label for="username" class="colocar_nombre">Usuario: </label>
+        {{form.username}}
+        </div>
+    
+        <div class="col-lg-6">
+     <label for="email" class="colocar_apellido">Email: </label>
+     {{form.email}}
+     </div>
+     </div>
+    
+     <label for="email" class="colocar_email">Contraseña: </label>
+     {{form.password1}}
+   
+    
+     <div class="row">
+     <div class="col-lg-6">
+     <label for="Cedula" class="colocar_Identificacion">Confirmar Contraseña: </label>
+     {{form.password2}}
+     </div>
+    
+    {{form.errors}}
+    
+     <input type="submit" name="submit" value="Registrarse" class="btn btn-primary btn-block btn-lg">
+    </form>
+    <p class="sesion">Ya tienes una cuenta? <a class="color" href="{% url 'login' %}">Inicia Sesión</p>
+    </div>
+    </div>
+    
+{% endblock %}
